@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Цитати!</title>
+    <style>
+      button {
+        font-size: 25px;
+        padding: 15px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Цитати</h1>
+    <button id="author-13">Л. Костенко</button>
+    <button id="author-14">Т.Шевченко</button>
+    <button id="author-15">П. Чубинський</button>
+    <button id="author-16">Л. Толстой</button>
+    <button id="author-17">В. Голобородько</button>
+    <p id="quote"></p>
+    <script>
+      const quotes = {
+        13: 'Нації вмирають не від інфаркту. Спочатку їм відбирає мову',
+        14: 'Нема на світі України, немає другого Дніпра',
+        15: 'Ще не вмерла України і слава, і воля.',
+        16: 'Я дуже люблю народну українсь-ку мову, звучну,барвисту й таку мя-ку.',
+        17: 'Мова вмирає, коли наступне покоління втрачає розуміннязначення слів.',
+      };
+
+      const buttons = document.querySelectorAll('button');
+      const quote = document.querySelector('#quote');
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const authorId = button.id.split('-')[1];
+          quote.textContent = quotes[authorId];
+        });
+      });
+    </script>
+  </body>
+</html>
